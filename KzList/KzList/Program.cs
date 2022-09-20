@@ -17,22 +17,18 @@ namespace KzList
             Console.Clear();
             Console.WriteLine("Debugging menu");
 
-            for (int i = 0; i < iListTest2.Capacity; i++)
+            for (int i = 0; i < 10; i++)
             {
-                iKzListTestPreSized.Add(i);
+                iKzListTest.Add(i);
             }
+            iKzListTest.Add(2);
 
-            Console.WriteLine(iKzListTestPreSized.Count);
-            Console.WriteLine(iKzListTestPreSized.Length);
-            iKzListTestPreSized.Remove(0);
+            iKzListTest.SortAscending();
 
-            for (int i = 0; i < iKzListTestPreSized.Count; i++)
+            for (int i = 0; i < iKzListTest.Count; i++)
             {
-                Console.WriteLine("Output: " + iKzListTestPreSized[i]);
+                Console.WriteLine("Output: " + iKzListTest[i]);
             }
-
-            Console.WriteLine(iKzListTestPreSized.Count);
-            Console.WriteLine(iKzListTestPreSized.Length);
 
             Console.ReadLine();
         }

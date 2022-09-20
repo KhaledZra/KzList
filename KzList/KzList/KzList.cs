@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,61 @@ namespace KzList
                 {
                     throw new IndexOutOfRangeException("Index location is out of bounds!");
 
+                }
+            }
+        }
+
+        public void Swap(int index1, int index2)
+        {
+            T temp = this._kzList[index1];
+            this._kzList[index1] = this._kzList[index2];
+            this._kzList[index2] = temp;
+        }
+
+        public int Compare(T xValue, T yValue)
+        {
+            return Comparer.Default.Compare(xValue, yValue);
+        }
+
+        public void SortAscending()
+        {
+            if (this._count == 0 || this._count == 1)
+            {
+                Console.WriteLine("Not enough stored data to sort!");
+            }
+            else
+            {
+                for (int i = 0; i < this._count; i++)
+                {
+                    for (int j = 0; j < this._count - 1; j++)
+                    {
+                        int result = Compare(this._kzList[j], this._kzList[j + 1]);
+                        if (result >= 0)
+                        {
+                            Swap(j, j + 1);
+                        }
+                    }
+                }
+            }
+        }
+        public void SortDescending()
+        {
+            if (this._count == 0 || this._count == 1)
+            {
+                Console.WriteLine("Not enough stored data to sort!");
+            }
+            else
+            {
+                for (int i = 0; i < this._count; i++)
+                {
+                    for (int j = 0; j < this._count-1; j++)
+                    {
+                        int result = Compare(this._kzList[j], this._kzList[j+1]);
+                        if (result <= 0)
+                        {
+                            Swap(j, j+1);
+                        }
+                    }
                 }
             }
         }
