@@ -64,12 +64,10 @@ namespace KzList
             this._kzList[index1] = this._kzList[index2];
             this._kzList[index2] = temp;
         }
-
         public int Compare(T xValue, T yValue)
         {
             return Comparer.Default.Compare(xValue, yValue);
         }
-
         public void SortAscending()
         {
             if (this._count == 0 || this._count == 1)
@@ -112,7 +110,6 @@ namespace KzList
                 }
             }
         }
-
         public void Add(T input)
         {
             if (this._length == this._count)
@@ -151,7 +148,6 @@ namespace KzList
                 this._count++;
             }
         }
-
         public void Remove(int index)
         {
             if (this._count == 0)
