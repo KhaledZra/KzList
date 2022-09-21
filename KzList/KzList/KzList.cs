@@ -176,11 +176,7 @@ namespace KzList
             }
         }
 
-        public void Clear()
-        {
-            Initialize();
-        }
-        public void Clear(int listLength)
+        public void Clear(int listLength = 0)
         {
             Initialize(listLength);
         }
