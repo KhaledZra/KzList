@@ -15,18 +15,9 @@ namespace KzList
 
         public int Count { get { return _count; } }
         public int Length { get { return _length; } }
-
-        public KzList() // Initialize empty KzList
+        public KzList(int listLength = 0) // Initialize KzList with specific size
         {
-            this._kzList = new T[0];
-            this._length = 0;
-            this._count = 0;
-        }
-        public KzList(int iSize) // Initialize KzList with specific size
-        {
-            this._length = iSize;
-            this._kzList = new T[this._length];
-            this._count = 0;
+            Initialize(listLength);
         }
 
         // Define the indexer to allow client code to use [] notation.
@@ -56,6 +47,13 @@ namespace KzList
 
                 }
             }
+        }
+
+        private void Initialize(int listLength)
+        {
+            this._length = listLength;
+            this._kzList = new T[this._length];
+            this._count = 0;
         }
 
         public void Swap(int index1, int index2)
@@ -176,6 +174,15 @@ namespace KzList
                     }
                 }
             }
+        }
+
+        public void Clear()
+        {
+            Initialize();
+        }
+        public void Clear(int listLength)
+        {
+            Initialize(listLength);
         }
     }
 }
